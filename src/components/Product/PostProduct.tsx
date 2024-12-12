@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { schema, SchemaForm } from "../../pages/schema"; // Assuming these are correctly set up
 import { zodResolver } from "@hookform/resolvers/zod";
 import apiProduct from "../../Services/ProductService";
+import { Brand, Category } from "../../constant/SelectItem";
 
 interface Props {
   isOpen: boolean;
@@ -11,16 +12,8 @@ interface Props {
 }
 
 const PostProduct = ({ isOpen, setIsOpen }: Props) => {
-  const Category = ["Electronics", "Games", "Personal Care"];
-  const Brand = [
-    "Nike",
-    "Apple",
-    "Philips",
-    "DeLonghi",
-    "Panasonic",
-    "Sony",
-    "Xiaomi",
-  ];
+
+
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {

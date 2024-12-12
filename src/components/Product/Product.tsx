@@ -4,15 +4,16 @@ import apiProduct, { Products } from "../../Services/ProductService";
 import PostProduct from "./PostProduct";
 import EditProduct from "./EditProduct";
 import Skelaton from "../../UI/Skelaton";
+import { Brand } from "../../constant/SelectItem";
 
 const Product = () => {
   const [Product, setProduct] = useState<Products[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [filterData, setFilterData] = useState<Products[]>([]);
   const [selectedProdcutId, setSelectedProdcutId] = useState<
     number | null | string
   >(null);
-
   useEffect(() => {
     const { request, cancel } = apiProduct.getData();
     request.then((resposne) => {
@@ -21,17 +22,41 @@ const Product = () => {
     });
     return () => cancel();
   }, []);
+  const FilterData = (seletdBrand: string) => {
+    if (seletdBrand == "") {
+      setFilterData(Product);
+    } else {
+      const filtered = Product.filter(
+        (product) => product.brand == seletdBrand
+      );
+      setFilterData(filtered);
+    }
+  };
   return (
     <div>
       <Navbar />
       <PostProduct isOpen={isOpen} setIsOpen={setIsOpen} />
-
+      {Brand.map((brand, i) => (
+        <button
+          key={i}
+          onClick={() => FilterData(brand)}
+          className="bg-blue-600 text-white font-bold mx-2 px-5 py-2 mb-3 rounded-lg"
+        >
+          {brand}
+        </button>
+      ))}
+      <button
+        className="bg-gray-500 text-white px-10 py-2 mb-3 rounded-lg "
+        onClick={() => FilterData("")}
+      >
+        All Product
+      </button>
       <div className="grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {loading
           ? Array.from({ length: 10 }).map((_, index) => (
               <Skelaton index={index} loading={loading} />
             ))
-          : Product.map((product) => (
+          : filterData.map((product) => (
               <div
                 className="border rounded-lg overflow-hidden shadow-lg mx-2"
                 key={product.id}
