@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { useForm } from "react-hook-form";
-import { schema, SchemaForm } from "../../pages/schema"; // Assuming these are correctly set up
 import { zodResolver } from "@hookform/resolvers/zod";
 import apiProduct from "../../Services/ProductService";
 import { Brand, Category } from "../../constant/SelectItem";
+import { schema, SchemaForm } from "./schema";
 
 interface Props {
   isOpen: boolean;

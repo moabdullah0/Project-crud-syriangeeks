@@ -1,4 +1,3 @@
-import Navbar from "../../pages/Navbar";
 import { useEffect, useState } from "react";
 import apiProduct, { Products } from "../../Services/ProductService";
 import PostProduct from "./PostProduct";
@@ -6,6 +5,7 @@ import EditProduct from "./EditProduct";
 import Skelaton from "../../UI/Skelaton";
 import { Brand } from "../../constant/SelectItem";
 import SearchField from "../../UI/SearchField";
+import Navbar from "../../pages/Navbar";
 
 const Product = () => {
   const [Product, setProduct] = useState<Products[]>([]);
