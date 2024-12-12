@@ -5,12 +5,14 @@ import PostProduct from "./PostProduct";
 import EditProduct from "./EditProduct";
 import Skelaton from "../../UI/Skelaton";
 import { Brand } from "../../constant/SelectItem";
+import SearchField from "../../UI/SearchField";
 
 const Product = () => {
   const [Product, setProduct] = useState<Products[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [filterData, setFilterData] = useState<Products[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedProdcutId, setSelectedProdcutId] = useState<
     number | null | string
   >(null);
@@ -32,10 +34,30 @@ const Product = () => {
       setFilterData(filtered);
     }
   };
+  const HandleDelete = (id: string | number | null) => {
+    apiProduct.daleteDate(id).then(() => {
+      const updateProducts = Product.filter((product) => product.id !== id);
+      setFilterData(updateProducts);
+      setProduct(updateProducts);
+    });
+  };
+  const handleSearch = () => {
+    const filtered = Product.filter(
+      (product) =>
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilterData(filtered);
+  };
   return (
     <div>
       <Navbar />
       <PostProduct isOpen={isOpen} setIsOpen={setIsOpen} />
+      <SearchField
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        handleSearch={handleSearch}
+      />
       {Brand.map((brand, i) => (
         <button
           key={i}
@@ -89,7 +111,10 @@ const Product = () => {
                   >
                     Edit
                   </button>
-                  <button className="bg-red-400 text-white rounded-lg px-4 py-1 mb-5">
+                  <button
+                    onClick={() => HandleDelete(product.id!)}
+                    className="bg-red-400 text-white rounded-lg px-4 py-1 mb-5"
+                  >
                     Delete
                   </button>
                 </div>

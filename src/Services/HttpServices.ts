@@ -21,5 +21,8 @@ class HttpServices<T> {
   UpdateData(data: T, id: number | string | null) {
     return apiClient.put(this.endpoint + "/" + id, data);
   }
+  daleteDate(id: number | string | null) {
+    return apiClient.delete(this.endpoint + "/" + id);
+  }
 }
 export default HttpServices;

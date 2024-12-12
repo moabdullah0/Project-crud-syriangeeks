@@ -91,13 +91,13 @@
       "brand": "Philips"
     },
     {
-      "id": "12",
       "name": "Washing Machine",
       "category": "Home Appliances",
-      "price": 499.99,
-      "image_url": "https://images.unsplash.com/photo-1596495577885-9c3e5c4dce6e",
+      "price": 499,
+      "image_url": "https://plus.unsplash.com/premium_photo-1679913792906-13ccc5c84d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "A washing machine with advanced technology for excellent cleaning results.",
-      "brand": "Bosch"
+      "brand": "Bosch",
+      "id": "12"
     },
     {
       "id": "13",
@@ -109,76 +109,13 @@
       "brand": "Philips"
     },
     {
-      "id": "14",
-      "name": "Coffee Machine",
-      "category": "Home Appliances",
-      "price": 129.99,
-      "image_url": "https://images.unsplash.com/photo-1603817842340-03d74c9ecb7c",
-      "description": "An automatic coffee machine with precise temperature control.",
-      "brand": "DeLonghi"
-    },
-    {
-      "id": "15",
-      "name": "Table Fan",
-      "category": "Home Appliances",
-      "price": 29.99,
-      "image_url": "https://images.unsplash.com/photo-1615274926584-b0427fe3a251",
-      "description": "A small 40W table fan.",
-      "brand": "Panasonic"
-    },
-    {
-      "id": "16",
-      "name": "Sports Wireless Headphones",
-      "category": "Electronics",
-      "price": 69.99,
-      "image_url": "https://images.unsplash.com/photo-1571173493194-86e27e99b1da",
-      "description": "Sweat-resistant wireless sports headphones with high-quality sound.",
-      "brand": "Sony"
-    },
-    {
-      "id": "17",
-      "name": "Neck Massager",
-      "category": "Personal Care",
-      "price": 49.99,
-      "image_url": "https://images.unsplash.com/photo-1593250133643-36601e3a1d3f",
-      "description": "A neck massager designed to relieve tension and pain.",
-      "brand": "Xiaomi"
-    },
-    {
-      "id": "18",
-      "name": "Face Cleaning Device",
-      "category": "Personal Care",
-      "price": 29.99,
-      "image_url": "https://images.unsplash.com/photo-1606850690309-d37277dba44b",
-      "description": "An electric face cleaning device with deep vibration technology.",
-      "brand": "Philips"
-    },
-    {
-      "id": "19",
-      "name": "Keychain",
-      "category": "Accessories",
-      "price": 15.99,
-      "image_url": "https://images.unsplash.com/photo-1604029422975-9e36fa453f5d",
-      "description": "A stylish and unique keychain.",
-      "brand": "Apple"
-    },
-    {
-      "id": "20",
-      "name": "Backpack",
-      "category": "Accessories",
-      "price": 49.99,
-      "image_url": "https://images.unsplash.com/photo-1591336142142-ea7995e6d23f",
-      "description": "A versatile backpack with additional compartments.",
-      "brand": "Nike"
-    },
-    {
-      "id": "5a11",
+      "id": "f20f",
       "name": "Mohamed ",
       "category": "Electronics",
       "price": 10,
-      "image_url": "http://localhost:5173/product#",
-      "description": "fsdfsd",
-      "brand": "Philips"
+      "image_url": "https://plus.unsplash.com/premium_photo-1679913792906-13ccc5c84d44?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "sdfdsf",
+      "brand": "DeLonghi"
     }
   ]
 }
