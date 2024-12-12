@@ -19,13 +19,13 @@
       "id": "2"
     },
     {
-      "id": "3",
-      "name": "Laptop",
+      "name": "Laptop 1",
       "category": "Electronics",
-      "price": 1499.99,
+      "price": 1499,
       "image_url": "https://plus.unsplash.com/premium_photo-1733284807748-e96f611159aa?q=80&w=2042&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "A laptop with an Intel i7 processor and 16GB RAM.",
-      "brand": "Dell"
+      "brand": "Nike",
+      "id": "3"
     },
     {
       "id": "4",

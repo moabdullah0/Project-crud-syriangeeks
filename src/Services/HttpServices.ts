@@ -18,7 +18,7 @@ class HttpServices<T> {
   postData(data: T) {
     return apiClient.post<T[]>(this.endpoint, data);
   }
-  UpdateData(data: T, id: number | null) {
+  UpdateData(data: T, id: number | string | null) {
     return apiClient.put(this.endpoint + "/" + id, data);
   }
 }

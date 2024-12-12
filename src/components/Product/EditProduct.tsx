@@ -19,8 +19,8 @@ const EditProduct = ({ isOpen, setIsOpen, id }: Props) => {
         setProduct(response.data);
       });
     }
-  },[isOpen,id]);
-console.log(Product)
+  }, [isOpen, id]);
+  console.log(Product);
   const Category = ["Electronics", "Games", "Personal Care"];
   const Brand = [
     "Nike",
@@ -42,16 +42,24 @@ console.log(Product)
   } = useForm<SchemaForm>({
     resolver: zodResolver(schema),
   });
-useEffect(()=>{
-  if(Product){
-    Object.keys(Product).forEach((key)=>{
-      setValue(key as keyof SchemaForm,Product[key as keyof SchemaForm])
-    })
-  }
-},[Product,setValue])
+  useEffect(() => {
+    if (Product) {
+      Object.keys(Product).forEach((key) => {
+        setValue(key as keyof SchemaForm, Product[key as keyof SchemaForm]);
+      });
+    }
+  }, [Product, setValue]);
   const onSubmit = async (data: SchemaForm) => {
     try {
-      await apiProduct.postData(data);
+      await apiProduct
+        .UpdateData(data, id)
+        .then((res) => {
+          console.log(res);
+          setIsOpen(false);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
       reset();
       setIsOpen(false);
     } catch (err) {
